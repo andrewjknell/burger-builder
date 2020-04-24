@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Aux from '../../hoc/Aux'
+import Auxilary from '../../hoc/Auxilary';
 import Burger from "../../components/Burger/Burger";
 import BuildControls from "../../components/Burger/BuildControls/BuildControls";
 
@@ -81,7 +81,7 @@ class BurgerBuilder extends Component {
             disableInfo[key] = disableInfo[key] <= 0
         }
         return (
-            <Aux>
+            <Auxilary>
                 <Burger ingredients={this.state.ingredients} />
                 <BuildControls
                     curPrice={this.state.totalPrice}
@@ -90,7 +90,7 @@ class BurgerBuilder extends Component {
                     disabled={disableInfo}
                     purchasable={this.state.purchasable}
                 />
-            </Aux>
+            </Auxilary>
         );
     }
 }
