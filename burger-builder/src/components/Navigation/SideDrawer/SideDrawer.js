@@ -4,14 +4,13 @@ import classes from './SideDrawer.css';
 import Logo from '../../Logo/Logo';
 import NavigationItems from '../NavigationItems/NavigationItems';
 import Backdrop from '../../UI/Backdrop/Backdrop';
-import Auxilary from '../../../hoc/Auxilary';
+import Auxilary from '../../../hoc/Auxilary/Auxilary';
 
 const sideDrawer = (props) => {
-    let attachedClasses = [classes.sideDrawer, classes.Close];
+    let attachedClasses = [classes.SideDrawer, classes.Close];
     if (props.open) {
-        attachedClasses = [classes.SideDrawer, classes.Open]
+        attachedClasses = [classes.SideDrawer, classes.Open];
     }
-
     return (
         <Auxilary>
             <Backdrop show={props.open} clicked={props.closed} />
