@@ -11,14 +11,12 @@ axios.defaults.headers.common['Content-Type'] = 'aplication/json';
 
 
 axios.interceptors.request.use(request => {
-    console.log(request)
     return request;
 }, error => {
     return Promise.reject(error);
 });
 
 axios.interceptors.response.use(response => {
-    console.log(response)
     return response;
 }, error => {
     return Promise.reject(error);
