@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-
+// import { Redirect } from 'react-router-dom';
 import './NewPost.css';
 
 class NewPost extends Component {
     state = {
         title: '',
         body: '',
-        author: 'Max'
+        author: 'Max',
     }
 
-    componentDidMount(){
+    componentDidMount() {
         console.log(this.props)
     }
 
@@ -21,7 +21,10 @@ class NewPost extends Component {
             author: this.state.author,
         }
         axios.post('/posts', post)
-            .then(res => res)
+            .then(res => {
+                console.log(res);
+
+            })
             .catch(err => err)
     }
     render() {

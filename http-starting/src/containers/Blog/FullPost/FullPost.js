@@ -10,7 +10,7 @@ class FullPost extends Component {
 
     componentDidMount () {
         console.log(this.props);
-        this.loadData();
+        // this.loadData();
     }
 
     componentDidUpdate() {
