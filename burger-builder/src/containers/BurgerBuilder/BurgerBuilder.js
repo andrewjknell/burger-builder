@@ -31,7 +31,7 @@ class BurgerBuilder extends Component {
                 this.setState({ ingredients: res.data });
             })
             .catch(err => {
-                this.setState({error:err});
+                this.setState({ error: err });
             })
     }
 
@@ -86,27 +86,16 @@ class BurgerBuilder extends Component {
     }
 
     pruchaseContinueHandler = () => {
-        // alert('You continue!');
-        this.setState({ loading: true });
-        const order = {
-            ingredients: this.state.ingredients,
-            price: this.state.totalPrice,
-            customerData: {
-                name: 'andrew',
-                address: {
-                    street: '1234 st',
-                    state: 'ca',
-                },
-                email: 'test@gmail.com'
-            }
+        const params = [];
+        for (let i in this.state.ingredients) {
+            params.push(encodeURIComponent(i) + '=' + encodeURIComponent(this.state.ingredients[i]))
         }
-        axios.post('/orders.json', order)
-            .then(res => {
-                this.setState({ loading: false, purchasing: false })
-            })
-            .catch(err => {
-                this.setState({ loading: false, purchasing: false })
-            })
+        params.push('price=' + this.state.totalPrice)
+        const paramString = params.join('&');
+        this.props.history.push({
+            pathname: '/checkout',
+            search: '?' + paramString,
+        })
     }
 
     purchaseCancel = () => {
@@ -125,7 +114,7 @@ class BurgerBuilder extends Component {
         if (this.state.loading) {
             orderSummary = <Spinner />
         }
-        let burger = this.state.error ? <h3 style={{textAlign: 'center'}}>ingredients cannot be loaded....</h3> : <Spinner />  
+        let burger = this.state.error ? <h3 style={{ textAlign: 'center' }}>ingredients cannot be loaded....</h3> : <Spinner />
 
         if (this.state.ingredients) {
             burger = (

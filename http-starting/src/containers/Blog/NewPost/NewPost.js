@@ -21,10 +21,7 @@ class NewPost extends Component {
             author: this.state.author,
         }
         axios.post('/posts', post)
-            .then(res => {
-                console.log(res);
-
-            })
+            .then(res => res)
             .catch(err => err)
     }
     render() {
