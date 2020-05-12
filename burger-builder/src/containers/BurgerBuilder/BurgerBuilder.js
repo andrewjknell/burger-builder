@@ -9,10 +9,10 @@ import Spinner from "../../components/UI/Spinner/Spinner";
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 
 const INGREDIENT_PRICES = {
-    salad: .5,
-    cheese: .5,
-    meat: 2,
-    bacon: 1.5,
+    salad: .3,
+    cheese: .75,
+    meat: 1.8,
+    bacon: 1.6,
 }
 
 class BurgerBuilder extends Component {
