@@ -5,7 +5,9 @@
 
 # testing
 /coverage
-
+/public
+/scipts
+/config
 # production
 /build
 
