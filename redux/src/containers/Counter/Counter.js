@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import * as actionCreators from '../../store/actions/index';
 
 import CounterControl from '../../components/CounterControl/CounterControl';
 import CounterOutput from '../../components/CounterOutput/CounterOutput';
-import * as actions from '../../store/actions';
 
 class Counter extends Component {
 
@@ -13,8 +13,8 @@ class Counter extends Component {
                 <CounterOutput value={this.props.ctr} />
                 <CounterControl label="Increment" clicked={this.props.onIncrementCounter} />
                 <CounterControl label="Decrement" clicked={this.props.onDecrementCounter} />
-                <CounterControl label="Add 5" clicked={this.props.onIncrement5Counter} />
-                <CounterControl label="Subtract 5" clicked={this.props.onDecrement5Counter} />
+                <CounterControl label="Add 10" clicked={this.props.onIncrement5Counter} />
+                <CounterControl label="Subtract 10" clicked={this.props.onDecrement5Counter} />
                 <hr />
                 <button onClick={() => this.props.onStoreResult(this.props.ctr)}>store result</button>
                 <ul>
@@ -36,12 +36,12 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onIncrementCounter: () => dispatch({ type: actions.INCREMENT, value: 1 }),
-        onDecrementCounter: () => dispatch({ type: actions.DECREMENT, value: 1 }),
-        onIncrement5Counter: () => dispatch({ type: actions.ADD, value: 10 }),
-        onDecrement5Counter: () => dispatch({ type: actions.SUB, value: 10 }),
-        onStoreResult: (res) => dispatch({ type: actions.UPDATE,  value: res}),
-        onDeleteResult: (id) => dispatch({ type: actions.DELETE, id: id }),
+        onIncrementCounter: () => dispatch(actionCreators.increment()),
+        onDecrementCounter: () => dispatch(actionCreators.decrement()),
+        onIncrement5Counter: () => dispatch(actionCreators.add()),
+        onDecrement5Counter: () => dispatch(actionCreators.sub()),
+        onStoreResult: (res) => dispatch(actionCreators.update(res)),
+        onDeleteResult: (id) => dispatch(actionCreators.delet(id)),
     };
 };
 
