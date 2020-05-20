@@ -7,13 +7,13 @@ const initialState = {
 };
 
 const INGREDIENT_PRICES = {
-    salad: .3,
+    lettuce: .3,
     cheese: .75,
     meat: 1.8,
     bacon: 1.6,
 }
 
-const reducer = (state = initialState, action) => {
+const burgerReducer = (state = initialState, action) => {
     switch (action.type) {
         case actions.ADD_INGREDIENT:
             return {
@@ -36,7 +36,13 @@ const reducer = (state = initialState, action) => {
         case actions.SET_INGREDIENTS:
             return {
                 ...state,
-                ingredients: action.ingredients,
+                ingredients: {
+                    bacon: action.ingredients.bacon,
+                    cheese: action.ingredients.cheese,
+                    lettuce: action.ingredients.lettuce,
+                    meat: action.ingredients.meat
+                },
+                totalPrice: 4,
                 error: false
             };
         case actions.FETCH_INGREDIENTS_FAILED:
@@ -49,4 +55,4 @@ const reducer = (state = initialState, action) => {
     }
 };
 
-export default reducer;
+export default burgerReducer;
