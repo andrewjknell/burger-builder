@@ -37,7 +37,7 @@ export const purchaseBurger = (orderData) => {
 
 export const puchaseInit = () => {
     return {
-        type: actionTypes.PUCHASE_INIT
+        type: actionTypes.PURCHASE_INIT
     }
 }
 
@@ -74,7 +74,6 @@ export const fetchOrders = () => {
                         id: key
                     })
                 }
-                console.log('here', fetchedOrders)
                 dispatch(fetchOrdersSuccess(fetchedOrders))
             })
             .catch(err => {
