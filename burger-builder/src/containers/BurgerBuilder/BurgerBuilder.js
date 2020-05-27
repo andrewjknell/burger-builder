@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
-import axios from '../../axios-orders';
+import axios from '../../axios';
 
 import Auxilary from '../../hoc/Auxilary/Auxilary';
 import Burger from "../../components/Burger/Burger";
