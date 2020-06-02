@@ -23,8 +23,9 @@ export const authFail = (error) => {
 }
 
 export const logout = () => {
+    console.log('logoutaction')
     return {
-        type: actionTypes.AUTH_LOGOUT,
+        type: actionTypes.AUTH_LOGOUTTT,
     }
 }
 
