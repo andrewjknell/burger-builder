@@ -9,7 +9,7 @@ import Auth from './containers/Auth/Auth';
 import Logout from './containers/Auth/Logout/Logout';
 
 class App extends Component {
-
+   
    render() {
       return (
          <div>
