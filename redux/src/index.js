@@ -18,9 +18,9 @@ const rootReducer = combineReducers({
 const logger = store => {
     return next => {
         return action => {
-            console.log('[MiddleWare] Dispatching ', action);
+            console.log('[MiddleWare] Dispatching ');
             const result = next(action);
-            console.log('[MiddleWare] next state ', store.getState());
+            console.log('[MiddleWare] next state ');
             return result;
         }
     }
