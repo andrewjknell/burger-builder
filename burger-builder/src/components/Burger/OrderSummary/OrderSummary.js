@@ -3,11 +3,7 @@ import Auxilary from '../../../hoc/Auxilary/Auxilary';
 import Button from '../../UI/Button/Button';
 
 
-class OrderSummary extends Component {
-    UNSAFE_componentWillUpdate() {
-        console.log('[orderSummary] will updated')
-    }
-    
+class OrderSummary extends Component {   
     render() {
         const ingredSum = Object.keys(this.props.ingredients)
             .map(igKey => {

@@ -27,7 +27,6 @@ const authSuccess = (state, action) => {
 }
 
 const authLogout = (state, action) => {
-    console.log('loggedout')
     return updateObject(state, {token: null, userId: null})
 }
 
