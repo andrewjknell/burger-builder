@@ -6,8 +6,10 @@ export const updateObject = (oldObject, updatedValues) => {
 }
 
 export const checkValidity = (value, rules) => {
+    console.log('egere')
     let isValid = true;
     if (!rules) {
+        console.log('no rules')
         return true;
     }
 
@@ -32,6 +34,6 @@ export const checkValidity = (value, rules) => {
         const pattern = /^\d+$/;
         isValid = pattern.test(value) && isValid
     }
-
+    console.log(isValid)
     return isValid;
 }
