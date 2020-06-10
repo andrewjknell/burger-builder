@@ -91,9 +91,12 @@ class ContactData extends Component {
                         { value: 'fastest', displayValue: 'Fastest' },
                     ]
                 },
-                validation: {},
+                validation: {
+                    required: true,
+                },
                 value: 'none',
-                valid: true,
+                valid: false,
+                touched: false,
             },
         },
         formIsValid: false,

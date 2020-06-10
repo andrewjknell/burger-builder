@@ -6,6 +6,7 @@ export const updateObject = (oldObject, updatedValues) => {
 }
 
 export const checkValidity = (value, rules) => {
+    console.log(value, rules)
     let isValid = true;
     if (!rules) {
         return true;
@@ -21,6 +22,10 @@ export const checkValidity = (value, rules) => {
 
     if (rules.maxLength) {
         isValid = value.length <= rules.maxLength && isValid
+    }
+
+    if(value === 'none'){
+        isValid = false
     }
 
     if (rules.isEmail) {
